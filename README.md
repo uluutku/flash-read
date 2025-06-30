@@ -86,6 +86,36 @@ A beautiful, mobile-first React application designed to help you master the art 
 npm run build
 ```
 
+## 🌐 Deployment
+
+### Vercel (Recommended)
+
+The app is optimized for Vercel deployment with built-in routing fixes:
+
+1. **Connect your repository** to Vercel
+2. **Deploy automatically** - Vercel will detect the React app
+3. **No additional configuration needed** - The app includes:
+   - `vercel.json` for proper routing configuration
+   - `public/_redirects` for fallback handling
+   - HashRouter for client-side routing compatibility
+
+**Why HashRouter?**
+
+- Prevents 404 errors on page refresh
+- Works with static hosting platforms
+- No server-side routing configuration required
+
+### Manual Deployment
+
+```bash
+npm run build
+npm run preview
+```
+
+### Other Platforms
+
+The app works on any static hosting platform thanks to HashRouter. Simply upload the `dist` folder after building.
+
 ## 📱 App Structure
 
 ### 🏠 Home Dashboard

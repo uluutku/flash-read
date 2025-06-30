@@ -11,6 +11,7 @@ import {
   Sparkles,
   Rocket,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { cn, getSpeedCategory, formatTime } from "../utils";
 
 function HomePage({ readingStats }) {
@@ -153,9 +154,9 @@ function HomePage({ readingStats }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {quickActions.map((action) => (
-            <a
+            <Link
               key={action.title}
-              href={action.href}
+              to={action.href}
               className={cn(
                 "group relative p-6 rounded-2xl text-white shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden",
                 `bg-gradient-to-r ${action.gradient}`
@@ -177,7 +178,7 @@ function HomePage({ readingStats }) {
                 </div>
                 <Play className="w-5 h-5 text-white/60 group-hover:translate-x-1 transition-transform" />
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

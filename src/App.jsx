@@ -1,4 +1,10 @@
-import { HashRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+} from "react-router-dom";
 import { useState, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import {
@@ -208,11 +214,12 @@ function App() {
 
 // Enhanced Navigation Item Component
 function NavItem({ path, icon: Icon, label }) {
-  const isActive = window.location.pathname === path;
+  const location = useLocation();
+  const isActive = location.pathname === path;
 
   return (
-    <a
-      href={path}
+    <Link
+      to={path}
       className={`flex flex-col items-center p-3 rounded-xl transition-all duration-200 group ${
         isActive
           ? "text-primary bg-primary/10 shadow-lg"
@@ -229,7 +236,7 @@ function NavItem({ path, icon: Icon, label }) {
         <Icon size={20} />
       </div>
       <span className="text-xs mt-1 font-medium">{label}</span>
-    </a>
+    </Link>
   );
 }
 
